@@ -3,7 +3,6 @@ import { Table } from 'react-bootstrap';
 import { Button, ButtonToolbar, Form, FormCheck, FormGroup } from 'react-bootstrap';
 import { AddDepModal } from './AddDepModal';
 import { EditDepModal } from './EditDepModal';
-import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 import UserService from "../services/user.service";
 
 export default class BoardUser extends Component {
@@ -20,13 +19,10 @@ export default class BoardUser extends Component {
   }
 
   handeClick(e) {
-    console.log("Wurde geklickt: " + e.target.id);
+
     const item = e.target.name;
     const isChecked = e.target.checked;
-    console.log("Wurde geklickt: " + item);
-    console.log("Wurde geklickt: " + isChecked);
     var key = parseInt(e.target.id);
-    console.log("Key " + key);
 
     UserService.onOffAlert(parseInt(e.target.id)).then(
       response => {
@@ -49,10 +45,6 @@ export default class BoardUser extends Component {
         });
       }
     );
-
-
-
-
   }
 
   componentDidMount() {
