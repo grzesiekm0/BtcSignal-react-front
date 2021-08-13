@@ -15,42 +15,42 @@ class UserService {
   }
   //admin
   getAdminBoard() {
-  return axios.get(API_URL + 'Alert/AlertsForAdmin', { headers: authHeader() });
+    return axios.get(API_URL + 'Alert/AlertsForAdmin', { headers: authHeader() });
   }
   //universal
-  updateAlerts(alertId, currency, exchange,  threshold, active) {
+  updateAlerts(alertId, currency, exchange, threshold, active) {
     return axios.put(API_URL + 'Alert/' + alertId, {
-      "alertId":alertId, "userId":getUserId(), "currency":currency, "exchange":exchange, "threshold":threshold, "active":active
-    },{ 
-      headers: 
-      authHeader() 
+      "alertId": alertId, "userId": getUserId(), "currency": currency, "exchange": exchange, "threshold": threshold, "active": active
+    }, {
+      headers:
+        authHeader()
     })
   }
 
-  addAlerts(currency, exchange,  threshold, active) {
+  addAlerts(currency, exchange, threshold, active) {
     return axios.post(API_URL + 'Alert/AddAlert', {
-      "currency":currency, "exchange":exchange, "threshold":threshold, "active":active
-  }, { 
-    headers: 
-    authHeader() 
-  })
+      "currency": currency, "exchange": exchange, "threshold": threshold, "active": active
+    }, {
+      headers:
+        authHeader()
+    })
   }
-  
+
   deleteAlert(alertId) {
-    return axios.delete(API_URL + 'Alert/' + alertId, { 
-      headers: 
-      authHeader() 
+    return axios.delete(API_URL + 'Alert/' + alertId, {
+      headers:
+        authHeader()
     });
   }
 
   onOffAlert(alertId) {
-    return axios.post(API_URL + 'Alert/' + alertId,{}, { 
-    headers: 
-    authHeader() 
-  })
+    return axios.post(API_URL + 'Alert/' + alertId, {}, {
+      headers:
+        authHeader()
+    })
   }
 
-  
+
 }
 
 export default new UserService();
