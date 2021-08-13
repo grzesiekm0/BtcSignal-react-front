@@ -1,1 +1,1 @@
-web: node --trace-warnings src/index.js
+web: node server.js
