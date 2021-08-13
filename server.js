@@ -1,4 +1,4 @@
-/*const express = require("express");
+const express = require("express");
 // eslint-disable-next-line no-unused-vars
 // const bodyParser = require('body-parser');
 const path = require("path");
@@ -10,4 +10,4 @@ app.use(express.static(path.join(__dirname, "build")));
 // This route serves the React app
 app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "build", "src/index.js")));
 
-app.listen(port, () => console.log(`Server listening on port ${port}`));*/
+app.listen(port, () => console.log(`Server listening on port ${port}`));
